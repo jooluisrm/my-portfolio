@@ -27,7 +27,7 @@ export default function RootLayout({
     return (
         <html lang="pt-BR" suppressHydrationWarning>
             <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased vsc-initialized mx-4`}
+                className={`${geistSans.variable} ${geistMono.variable} antialiased vsc-initialized`}
                 cz-shortcut-listen="true"
             >
                 <ThemeProvider
@@ -36,7 +36,7 @@ export default function RootLayout({
                     enableSystem
                     disableTransitionOnChange
                 >
-                    <header className="container mx-auto relative pb-10">
+                    <header className="container mx-auto relative ">
                         <Header />
                     </header>
 
