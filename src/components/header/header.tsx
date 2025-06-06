@@ -2,6 +2,7 @@ import { Cover } from "../ui/cover";
 import { HoverBorderGradient } from "../ui/hover-border-gradient";
 import { TextHoverEffect } from "../ui/text-hover-effect";
 import { LiNav } from "./liNav";
+import { NavCell } from "./navCell";
 import { NavMd } from "./navMd";
 import { ThemeButton } from "./theme-button";
 
@@ -12,7 +13,7 @@ export const Header = () => {
                 <Cover>Meu Portifólio</Cover>
             </div>
             <NavMd />
-
+            <NavCell />
         </section>
     );
 }
