@@ -5,13 +5,14 @@ import { Github, Linkedin } from "lucide-react";
 import { Typewriter } from "./typewriter";
 import { TextFlip } from "./text-flip";
 import { TextHoverEffect } from "../ui/text-hover-effect";
+import { ThreeDCardDemo } from "./card-3d";
 
 export const HeroMain = () => {
     return (
         <main className="bg-white">
-            <BackgroundLines className="flex items-center h-screen">
-                <div className="z-10 container mx-auto flex flex-col items-center gap-10 pt-10 md:flex-row md:justify-between">
-                    <div className="flex flex-col gap-10">
+            <BackgroundLines className="flex items-center min-h-screen">
+                <div className="z-10 h-full container mx-auto flex flex-col-reverse items-center justify-center md:flex-row md:justify-between">
+                    <div className="flex flex-col gap-4">
                         <div>
                             <Typewriter />
                             <span className="text-sm xl:text-xl">Dev. Front-end, <span className="text-blue-500"><TextFlip /></span></span>
@@ -26,13 +27,7 @@ export const HeroMain = () => {
                         </div>
                     </div>
                     <div className="">
-                        <Image
-                            alt="Avatar"
-                            src={'/tim-maia.png'}
-                            width={400}
-                            height={400}
-                            className="rounded-full w-52 md:w-[400px]"
-                        />
+                        <ThreeDCardDemo />
                     </div>
                 </div>
             </BackgroundLines>
