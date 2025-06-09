@@ -3,7 +3,7 @@ import { CardContatos } from "./cardContatos";
 
 export const ContatosMain = () => {
     return (
-        <section>
+        <section id="contatos">
             <TitleSection text="Contatos"/>
             <CardContatos />
         </section>

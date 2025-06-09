@@ -10,7 +10,7 @@ import { LinkRedes } from "./linkRedes";
 
 export const HeroMain = () => {
     return (
-        <main className="bg-white">
+        <section className="bg-white" id="inicio">
             <BackgroundLines className="flex items-center min-h-screen">
                 <div className="z-10 h-full container px-4 mx-auto flex flex-col-reverse items-center justify-center md:flex-row md:justify-between">
                     <div className="flex flex-col gap-10">
@@ -34,6 +34,6 @@ export const HeroMain = () => {
                     </div>
                 </div>
             </BackgroundLines>
-        </main>
+        </section>
     );
 }

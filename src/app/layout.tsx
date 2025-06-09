@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header/header";
 import { ThemeProvider } from "@/components/theme-provider"
+import { TracingBeam } from "@/components/ui/tracing-beam";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -36,11 +37,11 @@ export default function RootLayout({
                     enableSystem
                     disableTransitionOnChange
                 >
-                    <header className="container mx-auto relative ">
-                        <Header />
-                    </header>
+                        <header className="container mx-auto relative ">
+                            <Header />
+                        </header>
 
-                    {children}
+                        {children}
                 </ThemeProvider>
             </body>
         </html>
