@@ -13,7 +13,7 @@ export const TecnologiaMain = () => {
     const [verMais, setVerMais] = useState(false);
 
     return (
-        <section id="tecnologias">
+        <section id="tecnologias" >
             <TracingBeam className="px-6">
                 <TitleSection text="Tecnologias" />
                 {!cardsFocus && <CardsTec />}

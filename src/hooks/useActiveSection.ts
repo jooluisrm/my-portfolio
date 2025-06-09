@@ -16,7 +16,7 @@ export const useActiveSection = (sectionIds: string[]) => {
         };
 
         const observer = new IntersectionObserver(handleIntersect, {
-            threshold: 0.6, // 60% visível já conta
+            threshold: 0.4, // 60% visível já conta
         });
 
         sectionIds.forEach(id => {

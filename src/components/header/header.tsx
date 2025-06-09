@@ -8,7 +8,7 @@ import { ThemeButton } from "./theme-button";
 
 export const Header = () => {
     return (
-        <section className="container px-4 mx-auto absolute flex justify-between items-center">
+        <section className="container px-4 mx-auto fixed flex justify-between items-center z-50">
             <div className="text-3xl pt-5">
                 <Cover>Meu Portifólio</Cover>
             </div>
