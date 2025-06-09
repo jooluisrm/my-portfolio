@@ -6,7 +6,7 @@ import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 
 export default function Home() {
     return (
-        <div>
+        <div className="dark:bg-black">
             <HeroMain /> 
             <TecnologiaMain />
         </div>
