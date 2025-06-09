@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Button } from "../ui/button";
 import { CardsFocus } from "./cardsFocus";
 import { CardsTec } from "./cardsTec";
-import { TitleSection } from "./titleSection";
+import { TitleSection } from "../titleSection";
 
 export const TecnologiaMain = () => {
 
@@ -13,7 +13,7 @@ export const TecnologiaMain = () => {
 
     return (
         <section className="">
-            <TitleSection />
+            <TitleSection text="Tecnologias"/>
             {!cardsFocus && <CardsTec />}
             <div className={`overflow-y-hidden relative flex justify-center transition-all ${verMais ? 'h-auto' : 'max-h-[500px]'}`}>
                 {cardsFocus && <CardsFocus />}

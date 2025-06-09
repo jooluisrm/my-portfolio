@@ -1,12 +1,16 @@
 "use client";
 import React from "react";
-import { SparklesCore } from "../ui/sparkles";
+import { SparklesCore } from "./ui/sparkles";
 
-export function TitleSection() {
+type Props = {
+  text: string
+}
+
+export function TitleSection({text}: Props) {
   return (
     <div className="h- w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md pt-10">
       <h1 className="md:text-7xl text-3xl lg:text-9xl font-bold text-center text-white relative z-20">
-        Tecnologias
+        {text}
       </h1>
       <div className="w-[40rem] h-40 relative">
         {/* Gradients */}

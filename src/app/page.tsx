@@ -1,3 +1,4 @@
+import { ContatosMain } from "@/components/contatos/contatos-main";
 import { Header } from "@/components/header/header";
 import { HeroMain } from "@/components/hero/hero-main";
 import { TecnologiaMain } from "@/components/tecnologia/tecnologia-main";
@@ -9,6 +10,7 @@ export default function Home() {
         <div className="dark:bg-black">
             <HeroMain /> 
             <TecnologiaMain />
+            <ContatosMain />
         </div>
     );
 }
