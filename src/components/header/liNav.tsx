@@ -1,24 +1,28 @@
-"use client"
+"use client";
 
 type Props = {
     text: string;
+    isActive?: boolean;
+    onClick?: () => void;
 };
 
-export const LiNav = ({ text }: Props) => {
+export const LiNav = ({ text, isActive = false, onClick }: Props) => {
     const handleClick = () => {
-        const id = text.toLowerCase(); // transforma "Projetos" em "projetos"
+        const id = text.toLowerCase();
         const section = document.getElementById(id);
         if (section) {
             section.scrollIntoView({ behavior: "smooth" });
         }
+        if (onClick) onClick();
     };
 
     return (
         <li
-            className="transition-all font-semibold cursor-pointer opacity-70 hover:opacity-100 hover:scale-110 hover:text-blue-500"
             onClick={handleClick}
+            className={`transition-all font-semibold cursor-pointer hover:opacity-100 hover:scale-110 
+                ${isActive ? "text-blue-500 opacity-100 scale-110" : "opacity-70 hover:text-blue-500"}`}
         >
-            {text}
+            {text.charAt(0).toUpperCase() + text.slice(1)}
         </li>
     );
 };

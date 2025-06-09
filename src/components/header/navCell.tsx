@@ -1,12 +1,11 @@
-"use client"
+"use client";
 
 import {
     Sheet,
     SheetContent,
-    SheetDescription,
     SheetHeader,
     SheetTitle,
-} from "@/components/ui/sheet"
+} from "@/components/ui/sheet";
 import { Button } from "../ui/button";
 import { Menu } from "lucide-react";
 import { ThemeButton } from "./theme-button";
@@ -14,12 +13,23 @@ import {
     Tooltip,
     TooltipContent,
     TooltipTrigger,
-} from "@/components/ui/tooltip"
+} from "@/components/ui/tooltip";
 import { LiNav } from "./liNav";
 import { useState } from "react";
+import { useActiveSection } from "@/hooks/useActiveSection";
 
 export const NavCell = () => {
     const [open, setOpen] = useState(false);
+    const sectionIds = ["inicio", "tecnologias", "projetos", "contatos"];
+    const activeSection = useActiveSection(sectionIds);
+
+    const handleItemClick = (id: string) => {
+        const section = document.getElementById(id);
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+            setOpen(false); // fecha o menu
+        }
+    };
 
     return (
         <>
@@ -46,10 +56,14 @@ export const NavCell = () => {
                     </SheetHeader>
                     <nav className="flex flex-col items-center gap-8 text-center">
                         <ul className="flex flex-col gap-8">
-                            <LiNav text="Início" />
-                            <LiNav text="Tecnologias" />
-                            <LiNav text="Projetos" />
-                            <LiNav text="Contatos" />
+                            {sectionIds.map((id) => (
+                                <LiNav
+                                    key={id}
+                                    text={id}
+                                    isActive={activeSection === id}
+                                    onClick={() => handleItemClick(id)}
+                                />
+                            ))}
                         </ul>
                         <div>
                             <ThemeButton />
@@ -59,4 +73,4 @@ export const NavCell = () => {
             </Sheet>
         </>
     );
-}
+};
