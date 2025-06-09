@@ -1,4 +1,4 @@
-"use client";
+
 
 import React from "react";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
@@ -11,10 +11,10 @@ export function ThreeDCardDemo() {
                 <CardItem translateZ="100" className="w-full">
                     <Image
                         alt="Avatar"
-                        src={'/tim-maia.png'}
+                        src={'/joao.png'}
                         width={400}
                         height={400}
-                        className="rounded-full w-52 md:w-[350px] object-cover"
+                        className="rounded-full w-52 h-52 md:w-[350px] md:h-[350px] object-cover"
                     />
                 </CardItem>
             </CardBody>
