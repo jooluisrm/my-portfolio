@@ -104,7 +104,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
                     }}
                 >
                     <img
-                        className="absolute inset-0 w-[120%] h-[120%] object-cover opacity-100 transition-opacity duration-600 ease-in-out"
+                        className="absolute inset-0 w-[120%] h-[120%] object-center opacity-100 transition-opacity duration-600 ease-in-out"
                         style={{
                             opacity: current === index ? 1 : 0.5,
                         }}

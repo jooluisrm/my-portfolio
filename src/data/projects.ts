@@ -2,18 +2,20 @@ const button = "Ver mais";
 
 export const slideData = [
     {
-        title: "BarberPro",
+        title: "BarberPro - Barbearia",
         description: "An application to schedule hair, beard, and eyebrow services across multiple barber shops.",
         type: "Full-Stack",
-        src: "https://images.unsplash.com/photo-1679420437432-80cfbf88986c?q=80&w=3540&auto=format&fit=crop",
+        src: "/projects/barberpro/BarberProIcone.png",
         techStack: ["React", "Next.js", "TailwindCSS"],
-        images: ["/images/barberpro/img1.png", "/images/barberpro/img2.png"],
+        images: ["/projects/barberpro/login-barbearia.png", "/projects/barberpro/home.png", 
+            "/projects/barberpro/agendamento-1.png", "/projects/barberpro/agendamento-2.png", 
+            "/projects/barberpro/barbeiros-1.png", "/projects/barberpro/barbeiros-2.png", "/projects/barberpro/barbearia-1.png", "/projects/barberpro/barbearia-2.png"],
         github: {
             frontend: "https://github.com/joaoluizdev/barberpro-frontend",
             backend: "https://github.com/joaoluizdev/barberpro-backend"
         },
         deploy: {
-            link: "https://barberpro.app"
+            link: "https://barber-pro-barbearia.vercel.app"
         },
         button: "View More"
     },

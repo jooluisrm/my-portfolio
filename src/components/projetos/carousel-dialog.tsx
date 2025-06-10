@@ -1,4 +1,5 @@
 import * as React from "react"
+        
 
 import { Card, CardContent } from "@/components/ui/card"
 import {
@@ -23,10 +24,10 @@ export function CarouselDialog({item}: Props) {
                     <CarouselItem key={index} className="">
                         <Image 
                             alt=""
-                            src={'/tim-maia.png'}
-                            width={400}
-                            height={200}
-                            className="object-cover rounded-2xl"
+                            src={item}
+                            width={1000}
+                            height={1000}
+                            className="object-cover rounded-2xl h-52"
                         />
                     </CarouselItem>
                 ))}
