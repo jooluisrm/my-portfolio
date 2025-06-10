@@ -1,3 +1,4 @@
+import { AboutMain } from "@/components/about/about-main";
 import { ContatosMain } from "@/components/contatos/contatos-main";
 import { HeroMain } from "@/components/hero/hero-main";
 import { ProjetosMain } from "@/components/projetos/projetos-main";
@@ -9,6 +10,7 @@ export default function Home() {
         <PrimeReactProvider>
             <main className="dark:bg-black">
                 <HeroMain />
+                <AboutMain />
                 <TecnologiaMain />
                 <ProjetosMain />
                 <ContatosMain />

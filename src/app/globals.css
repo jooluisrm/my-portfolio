@@ -124,3 +124,7 @@
 html {
   scroll-behavior: smooth;
 }
+.tec {
+  font-weight: 700;
+  color: var(--color-blue-500);
+}
