@@ -20,7 +20,7 @@ import { useActiveSection } from "@/hooks/useActiveSection";
 
 export const NavCell = () => {
     const [open, setOpen] = useState(false);
-    const sectionIds = ["inicio", "tecnologias", "projetos", "contatos"];
+    const sectionIds = ["início", "tecnologias", "projetos", "contatos"];
     const activeSection = useActiveSection(sectionIds);
 
     const handleItemClick = (id: string) => {
@@ -65,7 +65,7 @@ export const NavCell = () => {
                                 />
                             ))}
                         </ul>
-                        <div>
+                        <div className="hidden">
                             <ThemeButton />
                         </div>
                     </nav>

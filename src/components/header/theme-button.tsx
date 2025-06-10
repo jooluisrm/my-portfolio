@@ -13,7 +13,10 @@ import {
 } from "@/components/ui/dropdown-menu"
 
 export function ThemeButton() {
-  const { setTheme } = useTheme()
+  const { setTheme } = useTheme();
+  React.useEffect(() => {
+    setTheme("dark");
+  }, []);
 
   return (
     <DropdownMenu>

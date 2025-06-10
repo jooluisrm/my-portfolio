@@ -3,22 +3,30 @@ import {
     TooltipContent,
     TooltipTrigger,
 } from "@/components/ui/tooltip"
-import { Github, Linkedin } from "lucide-react";
+import { FileUser, Github, Linkedin } from "lucide-react";
 import Link from "next/link";
+import { Button } from "../ui/button";
 
 type Props = {
-    text: string;
+    text: "Linkedin" | "GitHub" | "Currículo";
     link: string;
 }
 
 export const LinkRedes = ({ text, link }: Props) => {
     return (
         <Tooltip>
-            <TooltipTrigger>
-                <Link href={`${link}`} target="_blank">
-                    {text === "Linkedin" && <Linkedin />}
-                    {text === "GitHub" && <Github />}
-                </Link>
+            <TooltipTrigger >
+                {/* Adicione o atributo download aqui para o currículo */}
+                {text === "Currículo" ? (
+                    <Link href={link} target="_blank" download>
+                        <FileUser />
+                    </Link>
+                ) : (
+                    <Link href={link} target="_blank">
+                        {text === "Linkedin" && <Linkedin />}
+                        {text === "GitHub" && <Github />}
+                    </Link>
+                )}
             </TooltipTrigger>
             <TooltipContent>
                 <p>{text}</p>
