@@ -32,7 +32,7 @@ export const DialogProjects = ({ slide }: Props) => {
                         {slide.description}
                     </DialogDescription>
                     {slide.techStack && (
-                        <div className="flex gap-4 pb-5">
+                        <div className="flex gap-4 pb-5 flex-wrap">
                             {slide.techStack.map((item, index) => (
                                 <ItemTechStack key={index} text={item} />
                             ))}

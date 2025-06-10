@@ -1,6 +1,5 @@
 import * as React from "react"
-        
-
+import { Image } from 'primereact/image';
 import { Card, CardContent } from "@/components/ui/card"
 import {
     Carousel,
@@ -10,25 +9,20 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel"
 import { SlideData } from "../ui/carousel2"
-import Image from "next/image"
+import { View } from "lucide-react";
+
 
 type Props = {
     item: SlideData;
 }
 
-export function CarouselDialog({item}: Props) {
+export function CarouselDialog({ item }: Props) {
     return (
         <Carousel className="w-full max-w-xs">
             <CarouselContent>
                 {item.images && item.images.map((item, index) => (
-                    <CarouselItem key={index} className="">
-                        <Image 
-                            alt=""
-                            src={item}
-                            width={1000}
-                            height={1000}
-                            className="object-cover rounded-2xl h-52"
-                        />
+                    <CarouselItem key={index} >
+                        <Image src={item} indicatorIcon={<View />} alt="Image" preview />
                     </CarouselItem>
                 ))}
             </CarouselContent>
