@@ -70,20 +70,20 @@ export function FormEmail() {
 
         emailjs
             .sendForm(
-                "service_d2iqyzv",
-                "template_4eblw6a",
-                formRef.current,
-                "jvCsuaXU-gVnEGQU6"
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+                formRef.current!,
+                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
             )
             .then(
                 () => {
-                    toast("Mensagem enviada com sucesso!")
-                    form.reset();
+                    toast("Mensagem enviada com sucesso!");
+                    formRef.current?.reset();
                     setLoading(false);
                 },
                 (error) => {
                     console.error(error.text);
-                    toast("Erro ao enviar. Tente novamente.")
+                    toast("Erro ao enviar. Tente novamente.");
                     setLoading(false);
                 }
             );
