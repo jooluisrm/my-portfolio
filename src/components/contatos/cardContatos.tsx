@@ -1,10 +1,14 @@
+"use client"
+
 import { LinkRedes } from "../hero/linkRedes";
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
+import { BackgroundGradient } from "../ui/background-gradient";
 
 export const CardContatos = () => {
     return (
         <CardContainer>
-            <CardBody className="border border-black dark:border-white/50 rounded-3xl pt-5 px-10 flex flex-col justify-around">
+            <BackgroundGradient>
+            <CardBody className=" bg-black rounded-3xl px-10 flex flex-col justify-around">
                 <div className="">
                     <CardItem
                         translateZ="50"
@@ -49,6 +53,7 @@ export const CardContatos = () => {
 
                 </CardItem>
             </CardBody>
+            </BackgroundGradient>
         </CardContainer>
     );
 }
