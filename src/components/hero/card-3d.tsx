@@ -11,7 +11,7 @@ export function ThreeDCardDemo() {
             <CardBody className="relative group/card w-auto h-auto rounded-full">
                 <CardItem translateZ="100" className="w-full rounded-full">
                     {/* Borda de gradiente */}
-                    <div className="bg-zinc-900 rounded-full p-1 bg-gradient-to-tr from-blue-500 via-purple-500 to-pink-500">
+                    <div className="bg-zinc-900 rounded-full p-1 bg-gradient-to-tr from-blue-500 to-purple-500 ">
                         <Image
                             alt="Avatar"
                             src="/joao.png"

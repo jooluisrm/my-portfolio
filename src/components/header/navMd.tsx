@@ -5,7 +5,7 @@ import { LiNav } from "./liNav";
 import { ThemeButton } from "./theme-button";
 
 export const NavMd = () => {
-    const sectionIds = ["início", "tecnologias", "projetos", "contatos"];
+    const sectionIds = ["início", "sobre", "tecnologias", "projetos", "contatos"];
     const activeSection = useActiveSection(sectionIds);
 
     return (
