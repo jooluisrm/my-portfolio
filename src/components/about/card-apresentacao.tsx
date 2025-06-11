@@ -6,11 +6,7 @@ import { TitleCard } from "./title-card";
 
 export const CardApresentacao = () => {
     return (
-        <CardContainer>
-
-
-
-
+        <CardContainer className="flex-1 max-w-[500px]">
             <BackgroundGradient className="flex-1 rounded-[22px] p-4 sm:p-10 bg-black">
                 <CardBody className="">
                     <main className="">
