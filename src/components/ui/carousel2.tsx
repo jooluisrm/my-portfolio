@@ -1,7 +1,7 @@
 "use client";
 import { IconArrowNarrowRight } from "@tabler/icons-react";
 import { useState, useRef, useId, useEffect } from "react";
-import { DialogProjects } from "../projetos/dialog-projects";
+import { DialogProjects } from "../projects/dialog-projects";
 
 export interface SlideData {
   title: string;

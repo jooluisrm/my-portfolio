@@ -6,12 +6,12 @@ import { TitleCard } from "./title-card";
 
 export const CardEducacao = () => {
     return (
-        <CardContainer className="flex-1">
+        <CardContainer className="flex-1 max-w-[500px]">
             <BackgroundGradient className="rounded-[22px] sm:p-10 bg-black">
                 <CardBody>
-                    <main>
+                    <main className="p-10 md:p-0">
                         <div>
-                            <TitleCard text="Educação" />
+                            <TitleCard text="Educação/Cursos" />
 
                             <div className="space-y-6">
                                 {/* Técnico em Informática */}
