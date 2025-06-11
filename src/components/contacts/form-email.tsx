@@ -64,7 +64,7 @@ export function FormEmail() {
         );
     }, []);
 
-    function onSubmit() {
+    const onSubmit = () => {
         if (!formRef.current) return;
         setLoading(true);
 
@@ -78,7 +78,18 @@ export function FormEmail() {
             .then(
                 () => {
                     toast("Mensagem enviada com sucesso!");
-                    formRef.current?.reset();
+                    formRef.current?.reset(); // limpa inputs do DOM
+                    form.reset({               // limpa valores controlados do hook
+                        title: "",
+                        name: "",
+                        email: "",
+                        message: "",
+                        time: new Date().toLocaleString("pt-BR", {
+                            timeZone: "America/Sao_Paulo",
+                            dateStyle: "short",
+                            timeStyle: "short",
+                        }),
+                    });
                     setLoading(false);
                 },
                 (error) => {
@@ -88,6 +99,7 @@ export function FormEmail() {
                 }
             );
     }
+
 
     return (
         <BackgroundGradient className="flex-1 lg:min-w-[400px]">
