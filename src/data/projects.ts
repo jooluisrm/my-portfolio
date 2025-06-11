@@ -27,7 +27,7 @@ export const slideData = [
         src: "/projects/barberpro/BarberProIcone.png",
         techStack: ["React", "Next.js", "TailwindCSS", "Zod", "Shadcn-ui", "Node.js", "Prisma", "Responsivo"],
         images: ["/projects/barberpro-cliente/home.png","/projects/barberpro-cliente/home-1.png",
-            "/projects/barberpro-cliente/barbearia.png","/projects/barberpro-cliente/barbearia-1.png","/projects/barberpro-cliente/barbearia-2.png",
+            "/projects/barberpro-cliente/barbearia.png","/projects/barberpro-cliente/barbearia-2.png",
             "/projects/barberpro-cliente/barbearia-3.png","/projects/barberpro-cliente/barbearia-4.png",
             "/projects/barberpro-cliente/buscar.png","/projects/barberpro-cliente/agendamentos.png",
             "/projects/barberpro-cliente/perfil.png",

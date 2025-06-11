@@ -29,7 +29,7 @@ export const TecnologiaMain = () => {
                         </Button>}
                 </div>
 
-                <div className="justify-center py-10 z-50 hidden md:flex">
+                <div className="flex justify-center py-10 z-50">
                     <Button variant={"secondary"} className="cursor-pointer" onClick={() => setCardFocus(!cardsFocus)}>{!cardsFocus ? "Desativar " : "Ativar "} Animações</Button>
                 </div>
             </TracingBeam>

@@ -6,9 +6,9 @@ import { BackgroundGradient } from "../ui/background-gradient";
 
 export const CardContatos = () => {
     return (
-        <CardContainer className="">
-            <BackgroundGradient>
-            <CardBody className=" bg-black rounded-3xl px-10 flex flex-col justify-around flex-1" >
+        <CardContainer className="min-h-[500px]">
+            <BackgroundGradient className="bg-black rounded-[22px] min-h-full">
+            <CardBody className="px-10 flex flex-col justify-around flex-1 md:w-[400px] h-[300px]" >
                 <div className="">
                     <CardItem
                         translateZ="50"
@@ -39,19 +39,6 @@ export const CardContatos = () => {
                     </CardItem>
 
                 </address>
-                <CardItem translateZ="50" className="mx-auto">
-                    <address className="flex justify-center gap-5">
-                        <LinkRedes
-                            link="https://www.linkedin.com/in/jaoluisrm/"
-                            text="Linkedin"
-                        />
-                        <LinkRedes
-                            link="https://github.com/jooluisrm"
-                            text="GitHub"
-                        />
-                    </address>
-
-                </CardItem>
             </CardBody>
             </BackgroundGradient>
         </CardContainer>
