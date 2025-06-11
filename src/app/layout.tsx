@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/header/header";
 import { ThemeProvider } from "@/components/theme-provider"
 import { TracingBeam } from "@/components/ui/tracing-beam";
+import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -63,6 +64,7 @@ export default function RootLayout({
                         </header>
 
                         {children}
+                        <Toaster />
                 </ThemeProvider>
             </body>
         </html>

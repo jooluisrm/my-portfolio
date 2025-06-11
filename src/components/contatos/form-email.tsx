@@ -1,6 +1,6 @@
 "use client"
-
-import { useRef, useEffect } from "react";
+import { toast } from "sonner"
+import { useRef, useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
@@ -16,6 +16,8 @@ import {
     FormLabel,
     FormMessage,
 } from "@/components/ui/form"
+import { Loader, LoaderCircle } from "lucide-react";
+import { BackgroundGradient } from "../ui/background-gradient";
 
 const formSchema = z.object({
     title: z
@@ -32,12 +34,13 @@ const formSchema = z.object({
         .string()
         .min(10, "A mensagem deve ter no mínimo 10 caracteres.")
         .max(1000, "A mensagem deve ter no máximo 1000 caracteres."),
-    time: z.string(), // Campo oculto, não precisa de validação aqui
+    time: z.string(),
 });
 
 
 export function FormEmail() {
     const formRef = useRef<HTMLFormElement>(null);
+    const [loading, setLoading] = useState(false);
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -50,7 +53,6 @@ export function FormEmail() {
         },
     });
 
-    // Atualiza o campo time sempre que o formulário for renderizado
     useEffect(() => {
         form.setValue(
             "time",
@@ -64,6 +66,7 @@ export function FormEmail() {
 
     function onSubmit() {
         if (!formRef.current) return;
+        setLoading(true);
 
         emailjs
             .sendForm(
@@ -74,89 +77,95 @@ export function FormEmail() {
             )
             .then(
                 () => {
-                    alert("Mensagem enviada com sucesso!");
+                    toast("Mensagem enviada com sucesso!")
                     form.reset();
+                    setLoading(false);
                 },
                 (error) => {
                     console.error(error.text);
-                    alert("Erro ao enviar. Tente novamente.");
+                    toast("Erro ao enviar. Tente novamente.")
+                    setLoading(false);
                 }
             );
     }
 
     return (
-        <Form {...form}>
-            <form
-                ref={formRef}
-                onSubmit={form.handleSubmit(onSubmit)}
-                className="flex flex-col gap-4 max-w-md flex-1"
-            >
-                <FormField
-                    control={form.control}
-                    name="title"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Assunto</FormLabel>
-                            <FormControl>
-                                <Input type="text" placeholder="Assunto" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
-                <FormField
-                    control={form.control}
-                    name="name"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Nome</FormLabel>
-                            <FormControl>
-                                <Input type="text" placeholder="Seu nome" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
-                <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>E-mail</FormLabel>
-                            <FormControl>
-                                <Input type="email" placeholder="Seu e-mail" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
-                <FormField
-                    control={form.control}
-                    name="message"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Mensagem</FormLabel>
-                            <FormControl>
-                                <Textarea placeholder="Sua mensagem" rows={4} {...field} />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
+        <BackgroundGradient className="flex-1 lg:min-w-[400px]">
+            <Form {...form}>
+                <form
+                    ref={formRef}
+                    onSubmit={form.handleSubmit(onSubmit)}
+                    className="flex flex-col gap-4 max-w-md bg-black rounded-3xl px-10 py-10"
+                >
+                    <FormField
+                        control={form.control}
+                        name="title"
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel>Assunto</FormLabel>
+                                <FormControl>
+                                    <Input type="text" placeholder="Motivo do contato" {...field} />
+                                </FormControl>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+                    <FormField
+                        control={form.control}
+                        name="name"
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel>Nome</FormLabel>
+                                <FormControl>
+                                    <Input type="text" placeholder="Seu nome" {...field} />
+                                </FormControl>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+                    <FormField
+                        control={form.control}
+                        name="email"
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel>E-mail</FormLabel>
+                                <FormControl>
+                                    <Input type="email" placeholder="Seu e-mail" {...field} />
+                                </FormControl>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+                    <FormField
+                        control={form.control}
+                        name="message"
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel>Mensagem</FormLabel>
+                                <FormControl>
+                                    <Textarea placeholder="Sua mensagem" rows={4} {...field} />
+                                </FormControl>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
 
-                {/* Campo oculto de time */}
-                <input
-                    type="hidden"
-                    name="time"
-                    value={form.getValues("time")}
-                />
+                    {/* Campo oculto de time */}
+                    <input
+                        type="hidden"
+                        name="time"
+                        value={form.getValues("time")}
+                    />
 
-                <Button
-                    type="submit"
-                    className="cursor-pointer"
-                    disabled={true}
-                >Enviar Mensagem</Button>
-            </form>
-        </Form>
+                    <Button
+                        type="submit"
+                        className="cursor-pointer"
+                        disabled={loading}
+                    >
+                        {loading ? <LoaderCircle className="animate-spin duration-150" /> : "Enviar Mensagem"}
+                    </Button>
+                </form>
+            </Form>
+        </BackgroundGradient>
     );
 }

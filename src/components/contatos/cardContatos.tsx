@@ -6,9 +6,9 @@ import { BackgroundGradient } from "../ui/background-gradient";
 
 export const CardContatos = () => {
     return (
-        <CardContainer>
+        <CardContainer className="">
             <BackgroundGradient>
-            <CardBody className=" bg-black rounded-3xl px-10 flex flex-col justify-around">
+            <CardBody className=" bg-black rounded-3xl px-10 flex flex-col justify-around flex-1" >
                 <div className="">
                     <CardItem
                         translateZ="50"
