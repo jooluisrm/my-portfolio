@@ -18,6 +18,9 @@ export function ThreeDCardDemo() {
                             width={400}
                             height={400}
                             className="rounded-full w-52 h-52 md:w-[350px] md:h-[350px] object-cover"
+                            quality={75}
+                            loading="eager"
+                            priority={true}
                         />
                     </div>
                 </CardItem>

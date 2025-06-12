@@ -6,9 +6,9 @@ import { TitleCard } from "./title-card";
 
 export const CardApresentacao = () => {
     return (
-        <CardContainer className="flex-1 max-w-[500px]">
-            <BackgroundGradient className="flex-1 rounded-[22px] p-4 sm:p-10 bg-black">
-                <CardBody className="">
+        <CardContainer className="flex-1 max-w-[500px] h-full">
+            <BackgroundGradient className="flex flex-col h-full rounded-[22px] p-4 sm:p-10 bg-black">
+                <CardBody className="flex-1 flex flex-col">
                     <main className="">
                         <TitleCard text="Apresentação" />
                         <div className="flex flex-col gap-5 text-lg text-center">

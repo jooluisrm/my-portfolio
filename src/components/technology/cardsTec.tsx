@@ -4,6 +4,7 @@ import {
     DraggableCardContainer,
 } from "@/components/ui/draggable-card";
 import { cards } from "@/data/items";
+import Image from "next/image";
 
 export function CardsTec() {
 
@@ -14,7 +15,11 @@ export function CardsTec() {
             </p>
             {cards.map((item, index) => (
                 <DraggableCardBody key={index} className={item.className}>
-                    <img
+                    <Image
+                        width={500}
+                        height={500}
+                        loading="lazy"
+                        quality={70}
                         src={item.image}
                         alt={item.title}
                         className="pointer-events-none relative z-10 h-80 w-80"

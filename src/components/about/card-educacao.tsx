@@ -6,9 +6,9 @@ import { TitleCard } from "./title-card";
 
 export const CardEducacao = () => {
     return (
-        <CardContainer className="flex-1 max-w-[500px]">
-            <BackgroundGradient className="rounded-[22px] sm:p-10 bg-black">
-                <CardBody>
+        <CardContainer className="flex-1 max-w-[500px] h-full">
+            <BackgroundGradient className="flex flex-col h-full rounded-[22px] sm:p-10 bg-black">
+                <CardBody className="flex-1 flex flex-col">
                     <main className="p-10 md:p-0">
                         <div>
                             <TitleCard text="Educação/Cursos" />
@@ -25,16 +25,16 @@ export const CardEducacao = () => {
                                 </div>
 
                                 {/* Bacharelado */}
-                            
-                                    <div className="border-l-4 border-purple-500 bg-muted/50 dark:bg-zinc-800 rounded-xl p-4 shadow-sm">
-                                        <h3 className="text-lg font-semibold">Bacharelado em Sistemas de Informação</h3>
-                                        <p className="text-sm text-muted-foreground">IFNMG - Campus Arinos</p>
-                                        <p className="text-sm">
-                                            Mai. 2023 – Dez. 2027{" "}
-                                            <span className="text-yellow-500 font-medium">(Em andamento)</span>
-                                        </p>
-                                    </div>
-                    
+
+                                <div className="border-l-4 border-purple-500 bg-muted/50 dark:bg-zinc-800 rounded-xl p-4 shadow-sm">
+                                    <h3 className="text-lg font-semibold">Bacharelado em Sistemas de Informação</h3>
+                                    <p className="text-sm text-muted-foreground">IFNMG - Campus Arinos</p>
+                                    <p className="text-sm">
+                                        Mai. 2023 – Dez. 2027{" "}
+                                        <span className="text-yellow-500 font-medium">(Em andamento)</span>
+                                    </p>
+                                </div>
+
 
 
                                 {/* Curso B7Web */}

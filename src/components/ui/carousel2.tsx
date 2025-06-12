@@ -2,6 +2,7 @@
 import { IconArrowNarrowRight } from "@tabler/icons-react";
 import { useState, useRef, useId, useEffect } from "react";
 import { DialogProjects } from "../projects/dialog-projects";
+import Image from "next/image";
 
 export interface SlideData {
   title: string;
@@ -103,7 +104,9 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
                                 : "none",
                     }}
                 >
-                    <img
+                    <Image
+                        width={500}
+                        height={500}
                         className="absolute inset-0 w-[120%] h-[120%] object-center opacity-100 transition-opacity duration-600 ease-in-out"
                         style={{
                             opacity: current === index ? 1 : 0.5,
@@ -111,7 +114,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
                         alt={title}
                         src={src}
                         onLoad={imageLoaded}
-                        loading="eager"
+                        loading="lazy"
                         decoding="sync"
                     />
                     {current === index && (
@@ -148,7 +151,7 @@ const CarouselControl = ({
 }: CarouselControlProps) => {
     return (
         <button
-            className={`w-10 h-10 flex items-center mx-2 justify-center bg-neutral-200 dark:bg-neutral-800 border-3 border-transparent rounded-full focus:border-[#6D64F7] focus:outline-none hover:-translate-y-0.5 active:translate-y-0.5 transition duration-200 ${type === "previous" ? "rotate-180" : ""
+            className={`w-10 h-10 flex items-center mx-2 justify-center bg-neutral-200 dark:bg-neutral-800 border-3 border-transparent rounded-full focus:border-blue-500 focus:outline-none hover:-translate-y-0.5 active:translate-y-0.5 transition duration-200 ${type === "previous" ? "rotate-180" : ""
                 }`}
             title={title}
             onClick={handleClick}
