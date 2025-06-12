@@ -13,7 +13,7 @@ export const HeroMain = () => {
     return (
         <section className="bg-white" id="início">
             <BackgroundLines className="flex items-center min-h-screen">
-                <div className="z-10 h-full container px-4 mx-auto flex flex-col-reverse items-center justify-center md:flex-row md:justify-between">
+                <div className="z-10 h-full container px-4 mx-auto flex gap-10 lg:gap-0 flex-col-reverse items-center justify-center lg:flex-row lg:justify-between">
                     <div className="flex flex-col gap-10">
                         <div>
                             <Typewriter />

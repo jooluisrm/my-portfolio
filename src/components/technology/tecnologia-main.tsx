@@ -9,7 +9,7 @@ import { TracingBeam } from "../ui/tracing-beam";
 
 export const TecnologiaMain = () => {
 
-    const [cardsFocus, setCardFocus] = useState(false);
+    const [cardsFocus, setCardFocus] = useState(true);
     const [verMais, setVerMais] = useState(false);
 
     return (
