@@ -8,7 +8,7 @@ export const Header = () => {
         <section className="container px-4 mx-auto mt-5 fixed flex justify-between items-center z-50">
             <div className="text-2xl">
                 <Link href={"/"}>
-                <h1 className="flex items-center gap-2 hover:text-blue-500" ><Code /> Portifólio</h1>
+                <h1 className="flex items-center gap-2 hover:text-blue-500" ><Code /> Portfólio</h1>
                 </Link>
             </div>
             <NavMd />
